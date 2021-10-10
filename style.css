@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  flex-direction: column;
+}
+
+#controller {
+  margin-top: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(240, 240, 240);
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+}
+
+#controller > span {
+  cursor: pointer;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: auto;
+}
+
+/* Loader1 Start */
+#outer1 {
+  width: 200px;
+  height: 200px;
+  background-color: #ea4492;
+  clip-path: circle(25px at calc(100% - 25px) calc(100% - 25px));
+  animation: orb ease-in-out 4s infinite, coloro1 ease normal 4s infinite;
+}
+
+#inner1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #428cd4;
+  clip-path: circle(25px at calc(100% - 25px) calc(100% - 25px));
+  animation: orb ease-in-out 4s -3s infinite,
+    colori1 ease normal 4s -3s infinite;
+}
+
+@keyframes orb {
+  0% {
+    clip-path: circle(25px at calc(100% - 25px) calc(100% - 25px));
+    transform: rotateZ(0deg);
+  }
+  25% {
+    clip-path: circle(10px at 50% 50%);
+    transform: rotateZ(90deg);
+  }
+  50% {
+    clip-path: circle(25px at 25px 25px);
+    transform: rotateZ(180deg);
+  }
+  75% {
+    clip-path: circle(10px at 50% 50%);
+    transform: rotateZ(270deg);
+  }
+  100% {
+    clip-path: circle(25px at calc(100% - 25px) calc(100% - 25px));
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes colori1 {
+  0% {
+    background-color: #ea4492;
+  }
+  25% {
+    background-color: #f5a2c9;
+  }
+  50% {
+    background-color: #fbdae9;
+  }
+  75% {
+    background-color: #f5a2c9;
+  }
+  100% {
+    background-color: #ea4492;
+  }
+}
+
+@keyframes coloro1 {
+  0% {
+    background-color: #428cd4;
+  }
+  25% {
+    background-color: #8ebae5;
+  }
+  50% {
+    background-color: #d9e8f6;
+  }
+  75% {
+    background-color: #8ebae5;
+  }
+  100% {
+    background-color: #428cd4;
+  }
+}
+/* Loader1 End */
+
+/* Loader 2 Starts */
+
+#cube {
+  position: absolute;
+}
+
+#cube > div {
+  background-color: #8ebae5;
+  height: 50px;
+  width: 50px;
+  border: 2px solid white;
+  position: absolute;
+  transition: all 1s ease-in-out;
+}
